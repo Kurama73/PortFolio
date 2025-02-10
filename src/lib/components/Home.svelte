@@ -30,8 +30,9 @@
         </section>
 
         <div class="fixed bottom-20 right-20">
-            <a href="#resume" 
-            class="inline-block px-12 py-6 text-3xl text-white bg-[#FF4D00] rounded-lg hover:brightness-110 transition-all duration-300 ease-in-out hover:drop-shadow-[0_0_8px_#FF4D00]">
+            <a href="/resume.pdf" 
+               download
+               class="inline-block px-12 py-6 text-3xl text-white bg-[#FF4D00] rounded-lg hover:brightness-110 transition-all duration-300 ease-in-out hover:drop-shadow-[0_0_8px_#FF4D00]">
                 Get my resume
             </a>
         </div>
