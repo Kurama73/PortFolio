@@ -1,4 +1,5 @@
-faire passer le bouton resume en petit logo dl en bas a droite avec le bouton remonter de maniere dynamique
+- faire passer le bouton resume en petit logo dl en bas a droite avec le bouton remonter de maniere dynamique
+- Mettre en place FlowByte pour le reste de l'ui
 
 ![Accueil](https://github.com/user-attachments/assets/7cc2a193-3ba6-4acd-841e-84788a2c75ee)
 ![Projets](https://github.com/user-attachments/assets/d5f5bf70-f96a-4fe2-82da-6483f37c2cb1)
