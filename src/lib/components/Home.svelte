@@ -1,5 +1,6 @@
 <div class="relative w-full min-h-screen bg-gray-900 text-white font-['Jersey10']">
     <div class="min-h-screen px-20 flex items-center">
+
         <!-- Section principale (2/3) -->
         <section class="w-2/3 pr-16 flex flex-col items-center justify-center text-center translate-y-[-10%]">
             <div class="max-w-2xl space-y-6">

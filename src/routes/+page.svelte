@@ -25,31 +25,38 @@
 	};
 </script>
 
+
+
+
 <Header />
 
-<main class="relative bg-gray-900 text-white">
-	<section id="accueil" class="min-h-screen pt-5 justify-center items-center flex">
-		<Home/>
-	</section>
+	<main class="relative bg-gray-900 text-white font-['Jersey25']">
+		<section id="accueil" class="min-h-screen pt-5 justify-center items-center flex">
+			<Home/>
+		</section>
 
-	<Swap />
+		<Swap />
 
-	<section id="projets" class="min-h-screen justify-center items-center flex">
-		<Projects/>
-	</section>
+		<section id="projets" class="min-h-screen justify-center items-center flex">
+			<Projects/>
+		</section>
 
-	<Swap />
+		<Swap />
 
-	<section id="competences" class="min-h-screen justify-center items-center flex">
-		<Skills/>
-	</section>
+		<section id="competences" class="min-h-screen justify-center items-center flex">
+			<Skills/>
+		</section>
 
-	<Swap />
+		<Swap />
 
-	<section id="contact" class="min-h-screen justify-center items-center flex">
-		<Contact/>
-	</section>
-</main>
+		<section id="contact" class="min-h-screen justify-center items-center flex">
+			<Contact/>
+		</section>
+	</main>
+
+
+
+
 
 <!-- Floating buttons container -->
 <div class="fixed bottom-8 right-8 flex flex-col gap-4">
@@ -83,6 +90,10 @@
 		</a>
 	</div>
 </div>
+
+
+
+
 
 <style>
     @keyframes fadeIn {
