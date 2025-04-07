@@ -30,26 +30,26 @@
 
 <Header />
 
-	<main class="relative bg-gray-900 text-white font-['Jersey25']">
+	<main class="home relative bg-gray-900 text-white font-['Jersey25']">
 		<section id="accueil" class="min-h-screen pt-5 justify-center items-center flex">
 			<Home/>
 		</section>
 
 		<Swap />
 
-		<section id="projets" class="min-h-screen justify-center items-center flex">
+		<section id="projets" class="Projects min-h-screen justify-center items-center flex">
 			<Projects/>
 		</section>
 
 		<Swap />
 
-		<section id="competences" class="min-h-screen justify-center items-center flex">
+		<section id="competences" class="Skills min-h-screen justify-center items-center flex">
 			<Skills/>
 		</section>
 
 		<Swap />
 
-		<section id="contact" class="min-h-screen justify-center items-center flex">
+		<section id="contact" class="Contact min-h-screen justify-center items-center flex">
 			<Contact/>
 		</section>
 	</main>
@@ -60,13 +60,14 @@
 
 <!-- Floating buttons container -->
 <div class="fixed bottom-8 right-8 flex flex-col gap-4">
+
 	<!-- Scroll to top button -->
 	{#if showScrollTop}
 		<div class="order-{!isExpanded ? '1' : '2'}">
 			<button
 				on:click={scrollToTop}
 				aria-label="Scroll to top"
-				class="w-14 h-14 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-all duration-300 animate-fadeIn hover:drop-shadow-lg"
+				class="w-14 h-14 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-all duration-300 animate-fadeIn hover:drop-shadow-lg cursor-pointer"
 			>
 				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>

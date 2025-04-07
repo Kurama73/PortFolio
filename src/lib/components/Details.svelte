@@ -6,9 +6,18 @@
 {#if showModal}
 	<div class="modal fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center" role="dialog" aria-modal="true" tabindex="0" on:click={toggleModal} on:keydown={(e) => e.key === 'Escape' && toggleModal()}>
 		<div class="modal-content bg-gray-800 text-white p-6 rounded-lg w-3/4 max-w-2xl" role="document" on:click|stopPropagation>
-			<h2 class="text-3xl mb-4">Détails compétences</h2>
-			<p>Contenu supplémentaire...</p>
-			<button class="close-button bg-[#FF4D00] text-white px-4 py-2 rounded-none mt-4" on:click={toggleModal}>Fermer</button>
+			<h1 class="text-3xl mb-4">Détails compétences</h1>
+
+			<ul>
+				<li>C1: bidule</li>
+				<li>C1: bidule</li>
+				<li>C1: bidule</li>
+				<li>C1: bidule</li>
+				<li>C1: bidule</li>
+
+			</ul>
+
+			<button class="close-button bg-[#FF4D00] text-white px-4 py-2 rounded-none mt-4 cursor-pointer " on:click={toggleModal}>Fermer</button>
 		</div>
 	</div>
 {/if}
