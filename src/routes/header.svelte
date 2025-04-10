@@ -11,9 +11,19 @@
     function handleScroll() {
         isScrolled = window.scrollY > 0;
         if (isScrolled) {
-            isOpen = false;
+            //isOpen = false;
         } else {
             isOpen = true;
+        }
+    }
+
+    function scrollToSection(event) {
+        event.preventDefault(); // Empêche la navigation par défaut
+        const targetId = event.currentTarget.getAttribute('href').substring(1); // Récupère l'ID de la section
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' }); // Défilement doux
         }
     }
 
@@ -46,31 +56,33 @@
     <div class="relative flex items-center">
 
         <nav class="absolute right-10 flex items-center gap-4">
-
-            <a href="#Home"
+            <a href="#accueil"
+               on:click={scrollToSection}
                class={`p-4 hover:text-[#FF4D00] hover:drop-shadow-[0_0_4px_#FF4D00] transition-all duration-150 ease-in-out whitespace-nowrap
-               ${isOpen ? 'translate-x-0 opacity-100 delay-[150ms]' : 'translate-x-[75px] opacity-0 delay-[100ms]'}`}>
+                    ${isOpen ? 'translate-x-0 opacity-100 delay-[150ms]' : 'translate-x-[75px] opacity-0 delay-[100ms]'}`}>
                 Home
             </a>
 
-            <a href="#Projects"
+            <a href="#projects"
+               on:click={scrollToSection}
                class={`p-4 hover:text-[#FF4D00] hover:drop-shadow-[0_0_4px_#FF4D00] transition-all duration-150 ease-in-out whitespace-nowrap
-               ${isOpen ? 'translate-x-0 opacity-100 delay-[100ms]' : 'translate-x-[75px] opacity-0 delay-[75ms]'}`}>
+                    ${isOpen ? 'translate-x-0 opacity-100 delay-[100ms]' : 'translate-x-[75px] opacity-0 delay-[75ms]'}`}>
                 Projects
             </a>
 
-            <a href="#Skills"
+            <a href="#skills"
+               on:click={scrollToSection}
                class={`p-4 hover:text-[#FF4D00] hover:drop-shadow-[0_0_4px_#FF4D00] transition-all duration-150 ease-in-out whitespace-nowrap
-               ${isOpen ? 'translate-x-0 opacity-100 delay-[50ms]' : 'translate-x-[75px] opacity-0 delay-[50ms]'}`}>
+                    ${isOpen ? 'translate-x-0 opacity-100 delay-[50ms]' : 'translate-x-[75px] opacity-0 delay-[50ms]'}`}>
                 Skills
             </a>
 
-            <a href="#Contact"
+            <a href="#contact"
+               on:click={scrollToSection}
                class={`p-4 hover:text-[#FF4D00] hover:drop-shadow-[0_0_4px_#FF4D00] transition-all duration-150 ease-in-out whitespace-nowrap
-               ${isOpen ? 'translate-x-0 opacity-100 delay-0' : 'translate-x-[75px] opacity-0 delay-[25ms]'}`}>
+                    ${isOpen ? 'translate-x-0 opacity-100 delay-0' : 'translate-x-[75px] opacity-0 delay-[25ms]'}`}>
                 Contact
             </a>
-
         </nav>
 
         <button class="cursor-pointer z-20 text-[#FF4D00] hover:drop-shadow-[0_0_4px_#FF4D00] transition-all duration-150"

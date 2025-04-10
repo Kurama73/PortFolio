@@ -1,4 +1,4 @@
-<div class="relative w-full min-h-screen bg-gray-900 text-white font-['Jersey10']">
+<div class="relative w-full min-h-screen  text-white font-['Jersey10']">
     <div class="min-h-screen px-20 flex items-center">
 
         <!-- Section principale (2/3) -->

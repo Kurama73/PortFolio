@@ -48,12 +48,12 @@
     }
 </script>
 
-<div id="project-page" class="relative w-full min-h-screen bg-gray-900 text-white grid">
-    <h1 class="text-8xl text-orange-500 mb-20 text-center">Projects</h1>
+<div id="project-page" class="relative w-full min-h-screen text-white grid mt-14">
+    <h1 class="text-8xl text-orange-500 text-center">Projects</h1>
 
-    <div id="project-list" class="grid grid-cols-1 gap-6 px-6">
+    <div id="project-list" class="grid grid-cols-1 px-6">
         {#each (showAllProjects ? projects : projects.slice(0, 3)) as project}
-            <div class="mb-8">
+            <div class="mb-3">
                 <ProjectCard
                   title={project.title}
                   description={project.description}
@@ -68,8 +68,8 @@
         {/each}
     </div>
 
-    <div class="flex justify-center mt-8">
-        <button on:click={toggleShowAllProjects} class="text-2xl px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-700">
+    <div class="flex justify-center">
+        <button on:click={toggleShowAllProjects} class="text-2xl px-4 h-12 bg-orange-500 text-white rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-700">
             {#if showAllProjects}
                 Voir moins
             {:else}

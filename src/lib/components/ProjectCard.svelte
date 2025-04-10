@@ -22,7 +22,12 @@
 	}
 </script>
 
-<button type="button" class="project-card w-3/4 flex flex-col md:flex-row items-start p-6 rounded-lg bg-gray-800 text-white gap-6 shadow-lg hover:shadow-xl transition-shadow cursor-pointer relative" on:click={handleToggleExpand} on:keydown={(e) => e.key === 'Enter' && handleToggleExpand()} aria-expanded={isExpanded}>
+<button type="button" class="project-card w-3/4 flex flex-col md:flex-row items-start p-4 rounded-lg bg-gray-800 text-white gap-6 shadow-lg hover:shadow-xl transition-shadow cursor-pointer relative"
+				on:click={handleToggleExpand}
+				on:keydown={(e) => e.key === 'Enter' && handleToggleExpand()}
+				aria-expanded={isExpanded}
+>
+
 	<!-- Details Section -->
 	<div class="flex flex-col w-full md:w-3/5">
 		<h2 class="text-4xl text-left font-bold mb-1">{title}</h2>

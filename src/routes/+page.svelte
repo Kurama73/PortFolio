@@ -28,26 +28,23 @@
 
 
 
-<Header />
+	<Header />
 
-	<main class="home relative bg-gray-900 text-white font-['Jersey25']">
+	<main class="home relative text-white font-['Jersey25']">
 		<section id="accueil" class="min-h-screen pt-5 justify-center items-center flex">
 			<Home/>
 		</section>
 
-		<Swap />
 
-		<section id="projets" class="Projects min-h-screen justify-center items-center flex">
+		<section id="projects" class="Projects min-h-screen justify-center items-center flex">
 			<Projects/>
 		</section>
 
-		<Swap />
 
-		<section id="competences" class="Skills min-h-screen justify-center items-center flex">
+		<section id="skills" class="Skills min-h-screen justify-center items-center flex">
 			<Skills/>
 		</section>
 
-		<Swap />
 
 		<section id="contact" class="Contact min-h-screen justify-center items-center flex">
 			<Contact/>
@@ -57,11 +54,9 @@
 
 
 
-
 <!-- Floating buttons container -->
-<div class="fixed bottom-8 right-8 flex flex-col gap-4">
-
-	<!-- Scroll to top button -->
+<div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50 pointer-events-auto">
+	<!-- Bouton "Scroll to top" -->
 	{#if showScrollTop}
 		<div class="order-{!isExpanded ? '1' : '2'}">
 			<button
@@ -76,24 +71,21 @@
 		</div>
 	{/if}
 
-	<!-- Download CV Button -->
+	<!-- Bouton "Download CV" -->
 	<div class="relative group order-{!isExpanded ? '2' : '1'}">
 		<a href="/resume.pdf"
 			 download
 			 aria-label="Download my resume"
 			 class="flex items-center justify-center transition-all duration-500 ease-in-out {isExpanded ? 'w-auto px-8' : 'w-14'} h-14 bg-[#FF4D00] rounded-full hover:brightness-110 hover:drop-shadow-[0_0_8px_#FF4D00]">
-            <span class="flex items-center gap-2 overflow-hidden transition-all text-3xl duration-500 {isExpanded ? 'opacity-100 w-auto' : 'opacity-0 w-0'}">
-                Get my resume
-            </span>
+      <span class="flex items-center gap-2 overflow-hidden transition-all text-3xl duration-500 {isExpanded ? 'opacity-100 w-auto' : 'opacity-0 w-0'}">
+        Get my resume
+      </span>
 			<svg class="w-6 h-6 {isExpanded ? 'ml-2' : ''} transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
 			</svg>
 		</a>
 	</div>
 </div>
-
-
-
 
 
 <style>
@@ -104,5 +96,13 @@
 
     .animate-fadeIn {
         animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    :global(main) {
+        background-image: url('/bg/bg-1.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
     }
 </style>

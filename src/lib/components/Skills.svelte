@@ -25,7 +25,7 @@
 	];
 </script>
 
-<div id="skills-page" class="relative w-full min-h-screen bg-gray-900 text-white">
+<div id="skills-page" class="relative w-full min-h-screen mt-14  text-white">
 	<h1 class="text-8xl text-orange-500 mb-20 text-center">Skills</h1>
 
 	<div class="flex items-center">
@@ -44,12 +44,6 @@
 		</div>
 
 		<div class="flex-1 relative overflow-hidden">
-			<!-- Gradient overlay left -->
-			<div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none"></div>
-
-			<!-- Gradient overlay right -->
-			<div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none"></div>
-
 			<div
 				id="technologies"
 				class="flex overflow-x-auto py-6 px-20 scroll-smooth"
