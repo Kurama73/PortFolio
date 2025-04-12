@@ -5,7 +5,7 @@ export default {
 	kit: {
 		adapter: adapter(),
 		paths: {
-			base: process.env.BASE_PATH || '' // Ajoutez le chemin si nécessaire (exemple : "/Portfolio")
+			base: '/Portfolio' // Chemin correspondant au nom du dépôt GitHub
 		}
 	},
 	preprocess: vitePreprocess()
