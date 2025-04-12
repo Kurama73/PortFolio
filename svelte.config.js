@@ -1,13 +1,12 @@
 import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 
-const config = {
+export default {
 	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: 'index.html', // Fichier de fallback pour les routes dynamiques
-		}),
+		adapter: adapter(),
+		paths: {
+			base: process.env.BASE_PATH || '' // Ajoutez le chemin si nécessaire (exemple : "/Portfolio")
+		}
 	},
+	preprocess: vitePreprocess()
 };
-
-export default config;
