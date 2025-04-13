@@ -1,8 +1,11 @@
-import vercel from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-static';
 
 const config = {
 	kit: {
-		adapter: vercel(),
+		adapter: adapter(),
+		paths: {
+			base: '',
+		}
 	}
 };
 
