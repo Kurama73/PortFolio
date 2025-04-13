@@ -1,5 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
+
 
 	let name = '';
 	let company = '';
@@ -72,19 +74,19 @@
 	<div class="links container mx-auto grid grid-cols-2 justify-center items-center text-orange-500 h-full w-full pl-10">
 		<div class="infos flex flex-col gap-4 items-left w-2/3">
 			<button type="button" class="discord flex items-center gap-5 p-3 bg-gray-800 rounded-lg cursor-pointer hover:bg-orange-500 hover:border hover:border-orange-500" on:click={() => handleClick('https://discordapp.com/users/459738394264862721')} role="link">
-				<img class="w-8 h-8 text-white" src="/icones/discord-dark.svg" alt="Discord" />
+				<img class="w-8 h-8 text-white" src="{base}/icones/discord-dark.svg" alt="Discord" />
 				<span class="text-xl text-white">Discord</span>
 			</button>
 			<button type="button" class="phone flex items-center  gap-5 p-3 bg-gray-800 rounded-lg cursor-pointer hover:bg-orange-500 hover:border hover:border-orange-500" on:click={() => handleClick('tel:+33771740797')} role="link">
-				<img class="w-8 h-8 text-white" src="/icones/phone-dark.svg" alt="Phone" />
+				<img class="w-8 h-8 text-white" src="{base}/icones/phone-dark.svg" alt="Phone" />
 				<span class="text-xl text-white">(+33) 07 71 74 07 97</span>
 			</button>
 			<button type="button" class="linkedin flex items-center  gap-5 p-3 bg-gray-800 rounded-lg cursor-pointer hover:bg-orange-500 hover:border hover:border-orange-500" on:click={() => handleClick('https://www.linkedin.com/in/tom-frumy-78b154295/')} role="link">
-				<img class="w-8 h-8 text-white" src="/icones/linkedin-dark.svg" alt="LinkedIn" />
+				<img class="w-8 h-8 text-white" src="{base}/icones/linkedin-dark.svg" alt="LinkedIn" />
 				<span class="text-xl text-white">LinkedIn Profile</span>
 			</button>
 			<button type="button" class="location flex items-center  gap-5 p-3 bg-gray-800 rounded-lg cursor-pointer hover:bg-orange-500 hover:border hover:border-orange-500" role="link" on:click={() => handleClick('https://maps.app.goo.gl/8a9DQEE81pHZfHbR9')}>
-				<img class="w-8 h-8 text-white" src="/icones/location-dark.svg" alt="Location" />
+				<img class="w-8 h-8 text-white" src="{base}/icones/location-dark.svg" alt="Location" />
 				<span class="text-xl text-white">Auvergne-Rhone-Alpe - Savoie - France</span>
 			</button>
 		</div>

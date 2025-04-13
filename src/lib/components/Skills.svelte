@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	let selectedButton: string = 'All';
 	let scrollPosition = 0;
 	let scrollContainer: HTMLDivElement;
@@ -55,7 +57,7 @@
 						<div class="skill-card bg-gray-800 p-6 rounded-lg w-full h-full flex flex-col justify-center mb-2">
 							<h3 class="text-2xl mb-3 text-center">{tech.name}</h3>
 							<img
-								src={`/skills/${tech.name.toLowerCase()}.png`}
+								src={base}{`/skills/${tech.name.toLowerCase()}.png`}
 								alt={tech.name}
 								class="skill-image w-16 h-16 mx-auto mb-4"
 							>

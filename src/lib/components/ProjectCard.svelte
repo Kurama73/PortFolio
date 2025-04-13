@@ -1,6 +1,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	import Details from './Details.svelte';
+	import { base } from '$app/paths';
 
 	export let title;
 	export let description;
@@ -42,7 +43,7 @@
 
 	<!-- Image Section -->
 	<div class="w-full md:w-2/5 flex items-center justify-center">
-		<img src={imageSrc} alt={title} class="max-w-full max-h-40 object-contain rounded-lg" />
+		<img src="{base}{imageSrc}" alt={title} class="max-w-full max-h-40 object-contain rounded-lg" />
 	</div>
 
 	<!-- Expand/Collapse Icon -->

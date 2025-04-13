@@ -5,7 +5,7 @@
 	import Projects from '$lib/components/Projects.svelte';
 	import Skills from '$lib/components/Skills.svelte';
 	import Contact from '$lib/components/Contact.svelte';
-	import Swap from '$lib/components/Swap.svelte';
+	import { base } from '$app/paths';
 
 	let showScrollTop = false;
 	let isExpanded = true;
@@ -73,7 +73,7 @@
 
 	<!-- Bouton "Download CV" -->
 	<div class="relative group order-{!isExpanded ? '2' : '1'}">
-		<a href="/resume.pdf"
+		<a href="{base}/resume.pdf"
 			 download
 			 aria-label="Download my resume"
 			 class="flex items-center justify-center transition-all duration-500 ease-in-out {isExpanded ? 'w-auto px-8' : 'w-14'} h-14 bg-[#FF4D00] rounded-full hover:brightness-110 hover:drop-shadow-[0_0_8px_#FF4D00]">
