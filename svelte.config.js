@@ -8,7 +8,7 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			base: '/docs',
+			base: '/PortFolio',
 			relative: false
 		}
 	}
