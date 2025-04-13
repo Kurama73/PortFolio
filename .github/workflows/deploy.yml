@@ -5,34 +5,54 @@ on:
     branches: [master]
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
+          cache: 'pnpm'
 
-      - name: Set BASE_PATH
-        run: echo "BASE_PATH=/PortFolio" >> $GITHUB_ENV
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build project
-        run: npm run build
+        run: |
+          echo "NODE_ENV=production" >> .env
+          pnpm run build
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build
-          publish_branch: gh-pages
+          path: build/
+
+  deploy:
+    needs: build-deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+
+      - name: Debug deployment
+        run: |
+          echo "Deployment logs:"
+          cat $GITHUB_WORKSPACE/build/index.html || echo "Build output not found"
