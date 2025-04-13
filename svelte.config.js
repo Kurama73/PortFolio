@@ -1,15 +1,16 @@
 import adapter from '@sveltejs/adapter-static';
+import * as process from '.svelte-kit/ambient.js';
 
 const config = {
 	kit: {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: 'index.html' // Active le mode SPA pour les routes dynamiques
+			fallback: 'index.html'
 		}),
 		paths: {
-			base: '/PortFolio', // Nom exact de votre dépôt GitHub
-			relative: false // Obligatoire pour GitHub Pages
+			base: '/PortFolio',
+			relative: false
 		}
 	}
 };
