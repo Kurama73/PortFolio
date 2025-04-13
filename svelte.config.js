@@ -8,7 +8,7 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			base: '/PortFolio',
+			base: '/PortFolio', // Chemin correspondant au sous-dossier GitHub Pages
 			relative: false
 		}
 	}
