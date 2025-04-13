@@ -35,8 +35,7 @@
     });
 </script>
 
-<header class="fixed top-0 right-0 w-full text-[#FF4D00] flex justify-end items-center p-4  z-50 font-['Jersey10'] text-2xl">
-
+<header class="fixed top-0 right-0 w-full text-[#FF4D00] flex justify-end items-center p-4 z-50 font-['Jersey10'] text-2xl" style="backdrop-filter: none; filter: none;">
     <!-- Logo GitHub -->
     <a href="https://github.com/Kurama73"
        target="_blank"
