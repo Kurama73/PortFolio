@@ -1,5 +1,4 @@
 import adapter from '@sveltejs/adapter-static';
-import * as process from '.svelte-kit/ambient.js';
 
 const config = {
 	kit: {
@@ -9,7 +8,7 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			base: '/PortFolio',
+			base: '/PortFolio', // Nom exact du dépôt GitHub
 			relative: false
 		}
 	}
