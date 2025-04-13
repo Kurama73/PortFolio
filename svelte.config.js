@@ -8,7 +8,7 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			base: '/PortFolio', // Nom exact du dépôt GitHub
+			base: '',
 			relative: false
 		}
 	}
