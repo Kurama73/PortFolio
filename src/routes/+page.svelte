@@ -121,11 +121,15 @@
         filter: blur(10px);
         transform: scale(1.05);
         z-index: -1;
+        height: 100dvh;
     }
 
     @media (max-width: 768px) {
 			#floating {
 					display: none;
       }
+        :global(main)::before {
+            height: 100vh;
+        }
     }
 </style>
