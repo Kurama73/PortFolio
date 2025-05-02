@@ -1,42 +1,18 @@
 <script lang="ts">
     import ProjectCard from '$lib/components/ProjectCard.svelte';
+    import { fade } from 'svelte/transition';
+    import { _ } from '$lib/i18n';
 
     let expandedProject: string | null = null;
     let showAllProjects = false;
 
-    const projects = [
-        {
-            title: "SmartDesk",
-            description: "Ceci est une description du projet SmartDesk.",
-            tags: ["#HTML", "#CSS", "#JS"],
-            imageSrc: "/SmartDesk.png",
-            details: "SmartDesk est un projet étudiant qui utilise le framework Svelte pour créer une application de gestion d'agenda allié à des widgets permettant de gérer les tâches et les notes.",
-            competences: "Compétences du projet SmartDesk",
-        },
-        {
-            title: "Project X",
-            description: "Description du projet X.",
-            tags: ["#React", "#TailwindCSS"],
-            imageSrc: "/ProjectX.png",
-            details: "Détails du projet X.",
-            competences: "Compétences du projet X",
-        },
-        {
-            title: "Portfolio Website",
-            description: "Mon site personnel pour afficher mes compétences.",
-            tags: ["#Svelte", "#Flowbite"],
-            imageSrc: "/Portfolio.png",
-            details: "Détails de mon site personnel.",
-            competences: "Compétences de mon site personnel",
-        },
-        {
-            title: "Another Project",
-            description: "Description d'un autre projet.",
-            tags: ["#Vue", "#Vuetify"],
-            imageSrc: "/AnotherProject.png",
-            details: "Détails d'un autre projet.",
-            competences: "Compétences d'un autre projet",
-        },
+    const image = [
+        "/projects/AppliParam.png",
+        "/projects/SmartDesk.png",
+        "/projects/PanierVIP.png",
+        "/projects/LootBoxHunter.png",
+        "/projects/DimensionalMatrix.png",
+        "/projects/SAE_JAVA.png",
     ];
 
     function toggleExpand(projectTitle: string) {
@@ -48,33 +24,75 @@
     }
 </script>
 
-<div id="project-page" class="relative w-full min-h-screen text-white grid mt-14">
-    <h1 class="text-8xl text-orange-500 text-center">Projects</h1>
+<div id="project-page" class="relative w-full min-h-screen text-white mt-14 px-6">
+    <h1 class="text-8xl text-orange-500 text-center mb-12">{$_('projects_title')}</h1>
 
-    <div id="project-list" class="grid grid-cols-1 px-6">
-        {#each (showAllProjects ? projects : projects.slice(0, 3)) as project}
-            <div class="mb-3">
+    <div id="project-list" class="grid grid-cols-1 gap-y-6">
+        {#each $_('projects').slice(0, showAllProjects ? undefined : 3) as proj, i (proj.title || i)}
+            <div transition:fade={{ duration: 100 }}>
                 <ProjectCard
-                  title={project.title}
-                  description={project.description}
-                  tags={project.tags}
-                  imageSrc={project.imageSrc}
-                  isExpanded={expandedProject === project.title}
-                  on:toggleExpand={() => toggleExpand(project.title)}
-                  details={project.details}
-                  competences={project.competences}
+                  title={proj.title}
+                  description={proj.description}
+                  tags={proj.tags}
+                  imageSrc={image[i]}
+                  isExpanded={expandedProject === proj.title}
+                  on:toggleExpand={() => toggleExpand(proj.title)}
+                  details={proj.details}
+                  competences={proj.competences}
                 />
             </div>
         {/each}
-    </div>
 
-    <div class="flex justify-center">
-        <button on:click={toggleShowAllProjects} class="text-2xl px-4 h-12 bg-orange-500 text-white rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-700">
-            {#if showAllProjects}
-                Voir moins
-            {:else}
-                Voir plus
-            {/if}
-        </button>
+        {#if $_('projects').length > 3}
+            <div class="flex justify-center mt-4">
+                <button
+                  on:click={toggleShowAllProjects}
+                  class="text-2xl px-4 h-12 bg-orange-500 text-white rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-700 transition-all duration-300"
+                >
+                    {#if showAllProjects}
+                        {$_('show_less')}
+                    {:else}
+                        {$_('show_more')}
+                    {/if}
+                </button>
+            </div>
+        {/if}
     </div>
 </div>
+
+<style>
+    h1 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (max-width: 640px) {
+        #project-page {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        #project-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .project-card {
+            width: 100%;
+            max-width: 320px;
+        }
+
+        button {
+            width: auto;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+    }
+</style>

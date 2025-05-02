@@ -6,6 +6,12 @@
 	import Skills from '$lib/components/Skills.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import { base } from '$app/paths';
+	import Experiences from '$lib/components/Experiences.svelte';
+	import { locale } from '$lib/i18n';
+
+	$: if (!$locale) {
+		locale.set('fr'); // Définir la langue par défaut
+	}
 
 	let showScrollTop = false;
 	let isExpanded = true;
@@ -45,6 +51,9 @@
 			<Skills/>
 		</section>
 
+		<section id="experiences" class="experiences min-h-screen justify-center items-center flex">
+			<Experiences/>
+		</section>
 
 		<section id="contact" class="Contact min-h-screen justify-center items-center flex">
 			<Contact/>
@@ -55,14 +64,14 @@
 
 
 <!-- Floating buttons container -->
-<div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50 pointer-events-auto">
+<div id="floating" class="fixed bottom-8 right-8 flex flex-col gap-4 z-50 pointer-events-auto">
 	<!-- Bouton "Scroll to top" -->
 	{#if showScrollTop}
 		<div class="order-{!isExpanded ? '1' : '2'}">
 			<button
 				on:click={scrollToTop}
 				aria-label="Scroll to top"
-				class="w-14 h-14 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-all duration-300 animate-fadeIn hover:drop-shadow-lg cursor-pointer"
+				class="w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-all duration-300 animate-fadeIn hover:drop-shadow-lg cursor-pointer"
 			>
 				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
@@ -99,10 +108,24 @@
     }
 
     :global(main) {
-        background-image: url('/bg/bg-1.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        position: relative;
+        z-index: 0;
         min-height: 100vh;
+    }
+
+    :global(main)::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: url('/backgrounds/bg-2.jpg') no-repeat center center / cover;
+        filter: blur(10px);
+        transform: scale(1.05);
+        z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+			#floating {
+					display: none;
+      }
     }
 </style>

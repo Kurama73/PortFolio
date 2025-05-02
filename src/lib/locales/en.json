@@ -1,0 +1,225 @@
+{
+  "home_title": "Home",
+  "projects_title": "Projects",
+  "skills_title": "Skills",
+  "experiences_title": "Experiences",
+  "contact_title": "Contact",
+  "status": "Developer Student",
+  "aboutme": "About me",
+  "aboutme_text": "Developer passionate about technology, innovation, and space. I first built my attention to detail and teamwork skills in the culinary field before transitioning to IT. This unconventional path taught me to adapt quickly, solve complex problems, and always strive for excellence. Today, I leverage this versatility and curiosity in software development, with a particular interest in projects that have a strong technological impact.",
+  "cv": "Download my CV",
+  "show_more": "Show more",
+  "show_less": "Show less",
+
+  "projects_details": "Project Details",
+  "projects_skills": "Related Skills",
+  "projects_skills_button": "Skill Details",
+
+  "projects": [
+    {
+      "title": "AppliParam – Development and Enhancement of Fire Panel Configuration Software",
+      "description": "Project completed during an internship at Desautel: improvement and development of new features for fire panel configuration software. WPF interface design, data handling, implementation of the Observer pattern, migration to .NET 9, unit testing, and documentation.",
+      "tags": ["C#", ".NET9", "WPF", "Design Patterns", "Git", "Company"],
+      "details": "As part of Desautel’s R&D team, I contributed to the evolution of a critical business application: redesigning WPF interfaces, adding parameter management modules, improving code robustness using the Observer pattern, technical migration to .NET 9, writing unit tests and technical documentation. Collaboration with QA and support teams.",
+
+      "competences": [
+        {
+          "code": "C1.3",
+          "sousCompetence": "Implement (Level 3): Adapt applications to various platforms",
+          "justification": "Redesign of a business application in C#/.NET with WPF, integration of design patterns (Observer). Linked to AC21.01 (application evolution) and AC11.04 (UI)."
+        },
+        {
+          "code": "C2.3",
+          "sousCompetence": "Optimize (Level 3): Analyze and optimize applications",
+          "justification": "Migration to .NET 9, performance and robustness improvements. Related to AC22.02 (advanced algorithms) and AC22.04 (environmental impact)."
+        },
+        {
+          "code": "C6.2",
+          "sousCompetence": "Collaborate (Level 2): Understand your role in a team",
+          "justification": "Collaboration with R&D teams, technical documentation. Aligned with AC26.01 (role diversity) and AC26.04 (professional communication)."
+        }
+      ]
+    },
+    {
+      "title": "SmartDesk – Productivity and Agenda Management App",
+      "description": "SmartDesk is a modern web application developed with Svelte, dedicated to personal organization and productivity management. It offers an interactive calendar, task manager, note-taking module, and music widget integration, all within a responsive and intuitive interface.",
+      "tags": ["HTML", "CSS", "JavaScript", "Svelte", "Node.js", "TailwindCSS", "GitHub", "Git", "MySQL", "VPS"],
+      "details": "Design and development of a complete web application (Svelte/Node.js) following a full software lifecycle (analysis, testing, deployment). Aligned with AC11.01 (implementation), AC11.02 (design), and AC11.03 (testing).",
+
+      "competences": [
+        {
+          "code": "C4.2",
+          "sousCompetence": "Manage (Level 2): Optimize a database",
+          "justification": "Modeling and optimizing a MySQL database for user/task management, with secure SQL queries. Related to AC14.03 (DB design) and AC25.01 (data handling)."
+        },
+        {
+          "code": "C3.2",
+          "sousCompetence": "Administer (Level 2): Deploy services within a network architecture",
+          "justification": "Deployment on VPS (Node.js configuration, security, automation). Covers AC20.02 (network services) and AC13.04 (advanced workstation configuration)."
+        }
+      ]
+    },
+    {
+      "title": "PanierVIP – Shopping List Management Site",
+      "description": "Web application built with PHP and Symfony enabling collaborative shopping list management: account creation, basket management, real-time sharing and purchase tracking.",
+      "tags": ["PHP", "Symfony", "Twig", "HTML", "CSS", "MySQL", "GitHub"],
+      "details": "Design and development of a complete website: authentication, user management, list creation and sharing, role management, responsive interface, data persistence in MySQL. Individual project with documentation and GitHub versioning.",
+
+      "competences": [
+        {
+          "code": "C1.1",
+          "sousCompetence": "Implement (Level 1): Develop simple applications",
+          "justification": "PHP/Symfony development with CRUD management and authentication. Covers AC11.01 and AC11.03."
+        },
+        {
+          "code": "C4.1",
+          "sousCompetence": "Manage (Level 1): Design a database",
+          "justification": "MySQL modeling and Symfony ORM integration. Linked to AC14.03."
+        },
+        {
+          "code": "C3.2",
+          "sousCompetence": "Administer (Level 2): Deploy services",
+          "justification": "Deployment and securing (hosting, session management). Related to AC20.02."
+        }
+      ]
+    },
+    {
+      "title": "LootBoxHunter – Cosmetic Case Opening Mobile App",
+      "description": "Android mobile app developed in Kotlin to simulate opening cosmetic crates, retrieving data via an API, and storing/authenticating with Firebase.",
+      "tags": ["Kotlin", "Android Studio", "Firebase", "REST API", "UI/UX"],
+      "details": "Development of a mobile app: interface design with Android Studio, asynchronous data retrieval from an API, user management and cloud storage via Firebase, implementation of notifications and connection state management.",
+
+      "competences": [
+        {
+          "code": "C1.3",
+          "sousCompetence": "Implement (Level 3): Adapt applications (mobile)",
+          "justification": "Kotlin development with Firebase, following UI/UX guidelines. Aligned with AC21.01 and AC11.04."
+        },
+        {
+          "code": "C4.2",
+          "sousCompetence": "Manage (Level 2): Handle heterogeneous data",
+          "justification": "Firebase integration (cloud data/authentication). Covers AC25.04."
+        },
+        {
+          "code": "C3.4",
+          "sousCompetence": "Administer (Level 3): Secure applications",
+          "justification": "Access management and secure data (Firebase Auth). Linked to AC23.03."
+        }
+      ]
+    },
+    {
+      "title": "DimensionalMatrix – Python Game on Raspberry Pi and SenseHat",
+      "description": "Development of an interactive game on Raspberry Pi 3 using the LED matrix and sensors of the SenseHat: the player controls a light dot through a maze using the gyroscope.",
+      "tags": ["Python", "Raspberry Pi", "SenseHat", "Game", "Gyroscope", "LED Matrix"],
+      "details": "Design of a Python game leveraging SenseHat features: LED matrix display, gyroscope-based movement, collision and level management, optimization for embedded hardware.",
+
+      "competences": [
+        {
+          "code": "C1.4",
+          "sousCompetence": "Implement (Level 3): Adapt applications (embedded)",
+          "justification": "Python programming for SenseHat (hardware constraints). Related to AC21.01."
+        },
+        {
+          "code": "C2.3",
+          "sousCompetence": "Optimize (Level 2): Select suitable algorithms",
+          "justification": "Optimization for Raspberry Pi (hardware limitations). Aligned with AC22.02."
+        }
+      ]
+    },
+    {
+      "title": "SAE JAVA – Graph Visualization and Aircraft Collision Avoidance",
+      "description": "Java Swing application for creating, coloring, and visualizing graphs modeling airspace and avoiding aircraft collisions in France.",
+      "tags": ["Java", "Swing", "Graph", "Algorithms", "Graphical Interface", "GitHub"],
+      "details": "Development of a Java application: graph modeling, collision avoidance algorithms, interactive GUI, event and color management, documentation, and project management on GitHub.",
+
+      "competences": [
+        {
+          "code": "C2.2",
+          "sousCompetence": "Optimize (Level 2): Use complex data structures",
+          "justification": "Graph algorithms for collision avoidance. Covers AC22.01."
+        }
+      ]
+    }
+  ],
+
+
+  "form": {
+    "name": "Name",
+    "company": "Company",
+    "email": "Email",
+    "object": "Subject",
+    "message": "Message",
+    "submit": "Send",
+    "success": "Message sent successfully!",
+    "error": "Error while sending the message.",
+    "unknown_error": "An unknown error occurred."
+  },
+
+  "skills": {
+    "title": "Skills",
+    "filter": "Filter",
+    "categories": {
+      "All": "All",
+      "Front-End": "Front-End",
+      "Back-End": "Back-End",
+      "DataBase": "Database",
+      "Frameworks": "Frameworks",
+      "Tools": "Tools"
+    }
+  },
+
+  "experiences": {
+    "title": "Experiences",
+    "items": [
+      {
+        "title": "Desautel - Software Development Internship",
+        "date": "APRIL 2025 - JULY 2025",
+        "description": "Development of fire control panel management software in C# .NET5/9.",
+        "tags": ["C#", ".NET"]
+      },
+      {
+        "title": "Culinary Internships",
+        "date": "SEPTEMBER 2018 - JUNE 2021",
+        "description": "Culinary training internships (Perpignan, Nice, Chambéry, Grésy-Sur-Aix, Les Ménuires, ...)",
+        "tags": ["Teamwork", "Organization", "Stress management"]
+      }
+    ]
+  },
+
+  "skillsModal": {
+    "title": "Skill Details",
+    "close": "Close",
+    "competencies": [
+      {
+        "code": "C1",
+        "label": "Develop an application",
+        "description": "Design, code, test, and integrate an IT solution for a client."
+      },
+      {
+        "code": "C2",
+        "label": "Optimize IT applications",
+        "description": "Propose optimized IT applications according to specific criteria (execution time, accuracy, resource consumption, etc.)."
+      },
+      {
+        "code": "C3",
+        "label": "Administer complex IT communication systems",
+        "description": "Install, configure, maintain, and optimize IT infrastructures, services, and networks."
+      },
+      {
+        "code": "C4",
+        "label": "Manage information data",
+        "description": "Design, manage, administer, and exploit company data to provide necessary decision-making information."
+      },
+      {
+        "code": "C5",
+        "label": "Lead a project",
+        "description": "Organize, manage, and supervise an IT project by applying appropriate methods and coordinating a team."
+      },
+      {
+        "code": "C6",
+        "label": "Work in an IT team",
+        "description": "Collaborate effectively within a team, communicate, share knowledge, and adopt a professional attitude."
+      }
+    ]
+  }
+}

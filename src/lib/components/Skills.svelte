@@ -1,66 +1,73 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { _ } from '$lib/i18n';
 
 	let selectedButton: string = 'All';
 	let scrollPosition = 0;
 	let scrollContainer: HTMLDivElement;
-
-	function selectButton(button: string) {
-		selectedButton = button;
-		// Reset scroll position when changing filter
-		scrollContainer.scrollLeft = 0;
-		scrollPosition = 0;
-	}
 
 	const technologies = [
 		{ name: 'HTML', category: 'Front-End', progress: 90 },
 		{ name: 'CSS', category: 'Front-End', progress: 85 },
 		{ name: 'JavaScript', category: 'Front-End', progress: 80 },
 		{ name: 'Java', category: 'Back-End', progress: 75 },
-		{ name: 'PHP', category: 'Back-End', progress: 70 },
-		{ name: 'SQL', category: 'DataBase', progress: 65 },
-		{ name: 'MongoDB', category: 'DataBase', progress: 60 },
-		{ name: 'Svelte', category: 'Frameworks', progress: 55 },
+		{ name: 'PHP', category: 'Back-End', progress: 60 },
+		{ name: 'SQL', category: 'DataBase', progress: 90 },
+		{ name: 'PLSQL', category: 'DataBase', progress: 70 },
+		{ name: 'MongoDB', category: 'DataBase', progress: 90 },
+		{ name: 'Svelte', category: 'Frameworks', progress: 70 },
 		{ name: 'Vue.js', category: 'Frameworks', progress: 50 },
-		{ name: 'Git', category: 'Tools', progress: 45 },
+		{ name: 'Git', category: 'Tools', progress: 70 },
 		{ name: 'Docker', category: 'Tools', progress: 40 },
+		{ name: 'C', category: 'Back-End', progress: 75 },
+		{ name: 'C-Sharp', category: 'Back-End', progress: 75 },
+		{ name: 'C++', category: 'Back-End', progress: 30 },
+		{ name: 'Python', category: 'Back-End', progress: 45 },
+		{ name: 'Kotlin', category: 'Back-End', progress: 75 },
+		{ name: 'Tailwind CSS', category: 'Frameworks', progress: 80 }
 	];
 </script>
 
-<div id="skills-page" class="relative w-full min-h-screen mt-14  text-white">
-	<h1 class="text-8xl text-orange-500 mb-20 text-center">Skills</h1>
+<div id="skills-page" class="relative w-full min-h-screen mt-14 text-white">
+	<h1 class="text-8xl text-orange-500 text-center" id="title"> {$_('skills_title')}</h1>
 
-	<div class="flex items-center">
-		<div id="filters" class="bg-gray-800 p-3 h-fit flex flex-col items-start max-w-40 ml-6 my-auto">
-			<h2 class="text-4xl mb-8 text-center w-full">Filter</h2>
+	<div class="flex items-start flex-col md:flex-row">
+		<!-- Filtres : visibles uniquement sur desktop -->
+		<div id="filters" class="hidden md:flex bg-gray-800 p-3 h-fit flex-col items-start max-w-40 ml-6 my-auto mr-2">
+			<h2 class="text-4xl mb-8 text-center w-full"> {$_('skills.filter')}</h2>
 			{#each ['All', 'Front-End', 'Back-End', 'DataBase', 'Frameworks', 'Tools'] as button}
 				<button
 					class="mb-4 text-lg w-full px-4 py-2 rounded transition-colors duration-150 hover:bg-orange-600"
 					class:bg-orange-500={selectedButton === button}
 					class:bg-gray-700={selectedButton !== button}
-					on:click={() => selectButton(button)}
+					on:click={() => {
+						selectedButton = button;
+						scrollContainer.scrollLeft = 0;
+						scrollPosition = 0;
+					}}
 				>
 					{button}
 				</button>
 			{/each}
 		</div>
 
-		<div class="flex-1 relative overflow-hidden">
+		<!-- Zone des skills -->
+		<div class="flex-1 relative overflow-hidden w-full">
 			<div
 				id="technologies"
-				class="flex overflow-x-auto py-6 px-20 scroll-smooth"
+				class="flex overflow-x-auto py-6 px-6 scroll-smooth snap-x snap-mandatory"
 				bind:this={scrollContainer}
 				on:scroll={() => scrollPosition = scrollContainer.scrollLeft}
 			>
-				<div class="grid gap-6" style="grid-auto-flow: column; grid-template-rows: repeat(3, minmax(0, 200px)); grid-auto-columns: minmax(200px, 1fr);">
-					{#each technologies.filter(tech => selectedButton === 'All' || tech.category === selectedButton) as tech, i}
-						<div class="skill-card bg-gray-800 p-6 rounded-lg w-full h-full flex flex-col justify-center mb-2">
+				<div class="grid gap-6 grid-flow-col grid-rows-[repeat(3,minmax(0,200px))] auto-cols-[minmax(200px,1fr)]">
+					{#each technologies.filter(tech => selectedButton === 'All' || tech.category === selectedButton) as tech}
+						<div class="skill-card bg-gray-800 p-6 rounded-lg w-full h-full flex flex-col justify-center snap-start">
 							<h3 class="text-2xl mb-3 text-center">{tech.name}</h3>
 							<img
-								src={base}{`/skills/${tech.name.toLowerCase()}.png`}
+								src={base + `/skills/${tech.name.toLowerCase()}.png`}
 								alt={tech.name}
 								class="skill-image w-16 h-16 mx-auto mb-4"
-							>
+							/>
 							<div class="progress-bar-container mt-4">
 								<div class="progress-bar" style="width: {tech.progress}%"></div>
 							</div>
@@ -73,6 +80,11 @@
 </div>
 
 <style>
+    h1 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
     .skill-card {
         width: 200px;
         height: 200px;
@@ -91,6 +103,7 @@
         background-color: #2d3748;
         border: 2px solid #4a5568;
         overflow: hidden;
+        border-radius: 4px;
     }
 
     .progress-bar {
@@ -116,7 +129,30 @@
         background: #ea580c;
     }
 
-    #technologies {
-        margin-top: -10px;
+    @media (max-width: 768px) {
+        #filters {
+            display: none !important;
+        }
+
+        #technologies {
+            padding-left: 1rem;
+            padding-right: 1rem;
+						margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        /* Snap obligatoire pour chaque colonne (déjà en grid 3 lignes) */
+        .skill-card {
+            scroll-snap-align: start;
+        }
+
+				#title {
+					margin-bottom: 0;
+				}
+
+        h1 {
+            font-size: 3rem; /* Taille du titre plus petite sur mobile */
+            margin-bottom: 2rem;
+        }
     }
 </style>
