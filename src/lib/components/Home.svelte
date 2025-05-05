@@ -40,9 +40,13 @@
                     {$_('aboutme')}
                 </h2>
                 <div class="bar w-125 h-1 bg-[#FF4D00] mx-auto md:mx-0"></div>
-                <p class="text-white/80 text-lg sm:text-xl leading-relaxed text-justify">
-                    {$_('aboutme_text')}
-                </p>
+                <p class="text-white/80 text-lg sm:text-xl leading-relaxed text-justify relative">
+                <div class="bg-gray-600/30 rounded-lg p-4 inline-block">
+                    <span class="text-white/80 text-lg sm:text-xl leading-relaxed">
+                        {$_('aboutme_text')}
+                    </span>
+                </div>
+
             </div>
 
             {#if isMobile}

@@ -123,6 +123,7 @@
 
     .project-card {
         transition: transform 0.2s, box-shadow 0.2s;
+        padding: 1rem;
     }
 
     .project-card:hover {
@@ -150,9 +151,9 @@
     }
 
     .project-image {
-        max-width: 90%; /* Empêche l'image de déborder horizontalement */
-        max-height: 200px; /* Limite la hauteur maximale de l'image */
-        object-fit: contain; /* Gère le redimensionnement sans déformation */
+        max-width: 90%;
+        max-height: 200px;
+        object-fit: contain;
     }
 
     @media (min-width: 768px) {
