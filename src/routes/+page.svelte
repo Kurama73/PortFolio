@@ -119,13 +119,14 @@
 <style>
     .background-container {
         position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+        top: -20px;
+        left: -20px;
+        bottom: -20px;
+        right: -20px;
         overflow: hidden;
+        background-color: black;
         filter: blur(10px);
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
 
     .background-home,
