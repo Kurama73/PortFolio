@@ -135,24 +135,52 @@
         }
 
         #technologies {
-            padding-left: 1rem;
-            padding-right: 1rem;
-						margin-right: 10px;
-            margin-left: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-rows: repeat(3, auto);
+						gap: 2px;
         }
 
-        /* Snap obligatoire pour chaque colonne (déjà en grid 3 lignes) */
         .skill-card {
-            scroll-snap-align: start;
+            height: auto;
+            min-height: 150px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #1a202c;
+            border-radius: 8px;
+						margin:0;
         }
 
-				#title {
-					margin-bottom: 0;
-				}
+        .skill-image {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 4px; /* Réduction de l'espacement sous l'image */
+
+        }
+
+        .progress-bar-container {
+            height: 8px;
+            border: 1px solid #4a5568;
+            background-color: #2d3748;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: auto;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #f97316;
+        }
 
         h1 {
-            font-size: 3rem; /* Taille du titre plus petite sur mobile */
+            font-size: 3rem;
             margin-bottom: 2rem;
+        }
+
+        #title {
+            margin-bottom: 0;
         }
     }
 </style>
