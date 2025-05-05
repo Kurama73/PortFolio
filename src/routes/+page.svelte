@@ -243,5 +243,17 @@
         #floating {
             display: none;
         }
+        .background-container {
+            position: fixed;
+            top: -50px;
+            left: -50px;
+            bottom: -50px;
+            right: -50px;
+            overflow: hidden;
+            background-color: black;
+            filter: blur(10px);
+            transform: scale(1.2);
+            z-index: -1;
+        }
     }
 </style>
