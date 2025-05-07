@@ -227,6 +227,35 @@
         "description": "Collaborer efficacement au sein d'une équipe, communiquer, partager des connaissances et adopter une posture professionnelle."
       }
     ]
+  },
+  "passions": {
+    "title": "Passions",
+    "passion": [
+      {
+        "title": "Gaming",
+        "description": "Passionné de jeux vidéo compétitifs, j’ai développé au fil du temps un véritable esprit d’analyse, de stratégie et de travail en équipe, notamment sur des titres comme *Rainbow Six Siege*. Le jeu vidéo est pour moi un moyen d’épanouissement, de rencontres et d’expériences uniques. Ces moments m’ont permis de gagner en confiance, en maturité, en rigueur et en méthodologie."
+      },
+      {
+        "title": "Espace",
+        "description": "Ma passion pour l’espace est née d’une quête de connaissance et d’un émerveillement devant les sciences. Bien qu’elle ne remonte pas à l’enfance, elle s’est imposée à moi comme une évidence. L’exploration et la compréhension de l’univers, de la vie, ainsi que les technologies associées (lanceurs, sondes, etc.) me fascinent. Cette passion m’accompagne partout et nourrit mon ambition d’avoir un jour un impact positif à travers un métier lié à ce domaine, en contribuant à l’avenir de l’humanité et de la planète."
+      },
+      {
+        "title": "Sport automobile",
+        "description": "Mon intérêt pour le sport automobile s’est construit progressivement, à mesure que je me passionnais pour l’ingénierie, la compétition et le sport. La Formule 1 m’a servi de porte d’entrée vers tout l’univers du sport auto. Aujourd’hui, je rêve de pouvoir pratiquer cette discipline en loisir, mais aussi, pourquoi pas, d’y travailler un jour, aux côtés des ingénieurs et des pilotes."
+      },
+      {
+        "title": "SimRacing",
+        "description": "En 2021, j’ai commencé à m’investir dans la simulation automobile, poussée par ma passion pour le sport auto. Je possède aujourd’hui un simulateur complet, qui me permet de développer des compétences telles que la concentration, le sang-froid, les réflexes, l’instinct et le pilotage de précision. Le SimRacing est une discipline exigeante, qui m'incite constamment à repousser mes limites et à viser l’excellence pour battre mes adversaires."
+      },
+      {
+        "title": "Cuisine",
+        "description": "Titulaire d’un Bac Professionnel Cuisine avec mention Très Bien, j’ai appris à travailler en équipe, à faire preuve de rigueur et à m’adapter à des situations imprévues. Cette expérience intense m’a permis de développer une excellente gestion du stress, une organisation solide et un esprit de collaboration. Ces compétences sont pleinement transférables dans le domaine de l’informatique. Cette aventure reste inoubliable, tant pour les valeurs que j’y ai découvertes que pour les personnes que j’ai rencontrées."
+      },
+      {
+        "title": "Informatique",
+        "description": "Ma passion pour l’informatique est née très tôt, en lien avec mon intérêt pour les jeux vidéo et la technologie. J’ai toujours été curieux de comprendre le fonctionnement des machines et des programmes, ce qui m’a donné une certaine aisance naturelle avec ces outils. Après des études en cuisine, j’ai décidé de réorienter mon parcours vers l’informatique en obtenant un Bac STI2D option Énergie et Environnement. Ce diplôme m’a permis de découvrir l’électricité, l’ingénierie, la mécanique et la programmation. Lors des projets, je choisissais systématiquement de travailler sur la programmation autonome des robots plutôt que sur leur conception physique. Résolution de problèmes, prototypage, tests : tout m’a passionné. C’est donc tout naturellement que j’ai choisi de poursuivre mes études dans le développement informatique. Aujourd’hui, je suis en deuxième année de BUT Informatique, spécialité développement d’applications, et je suis profondément passionné par ce que je fais."
+      }
+    ]
   }
 }
 

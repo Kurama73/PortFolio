@@ -124,6 +124,9 @@
     .project-card {
         transition: transform 0.2s, box-shadow 0.2s;
         padding: 1rem;
+        border-radius: 1rem;
+        border: 2px solid rgba(249, 115, 22, 0.3);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .project-card:hover {

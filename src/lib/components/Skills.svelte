@@ -89,6 +89,9 @@
         width: 200px;
         height: 200px;
         margin-bottom: 20px;
+        border-radius: 1rem;
+        border: 2px solid rgba(249, 115, 22, 0.3);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .skill-image {

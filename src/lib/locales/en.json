@@ -221,5 +221,34 @@
         "description": "Collaborate effectively within a team, communicate, share knowledge, and adopt a professional attitude."
       }
     ]
+  },
+  "passions": {
+    "title": "Passions",
+    "passion": [
+      {
+        "title": "Gaming",
+        "description": "Passionate about competitive video games, I’ve developed strong analytical, strategic, and teamwork skills over time, especially through games like *Rainbow Six Siege*. For me, gaming is a way to grow personally, meet people, and live unique experiences. These moments have helped me gain confidence, maturity, discipline, and a solid methodology."
+      },
+      {
+        "title": "Space",
+        "description": "My passion for space was born from a deep curiosity and a fascination with science. Although it didn’t start in childhood, it quickly became a major interest. I’m deeply intrigued by the exploration and understanding of the universe and life itself, as well as the technologies behind space missions—rockets, probes, and more. This passion drives me every day and inspires me to one day contribute meaningfully to this field and to humanity’s future."
+      },
+      {
+        "title": "Motorsports",
+        "description": "My interest in motorsports grew gradually as I developed a passion for engineering, competition, and sports. Formula 1 was my gateway into the broader world of motorsport. Today, I dream of trying it as a hobby, and maybe even working in the field alongside engineers and drivers someday."
+      },
+      {
+        "title": "SimRacing",
+        "description": "In 2021, I started investing more and more time in racing simulation, driven by my passion for motorsports. I now own a full racing simulator that allows me to develop advanced skills such as precision driving, focus, composure, reflexes, and instinct. SimRacing is a demanding discipline that constantly pushes me to improve and aim for perfection in order to outperform my rivals on the track."
+      },
+      {
+        "title": "Cooking",
+        "description": "I hold a professional high school diploma in Culinary Arts with honors. This experience taught me to work efficiently in a team, to be rigorous, and to adapt quickly to unforeseen challenges. It helped me develop strong stress management, organizational, and collaborative skills—all of which are highly transferable to the field of computer science. This journey was unforgettable, both for the values I gained and for the people I met along the way."
+      },
+      {
+        "title": "Computer Science",
+        "description": "My passion for computer science began early, closely tied to my love for video games and technology. I've always been curious about how machines and programs work, which made me naturally comfortable with digital tools. After my culinary studies, I decided to shift towards IT by earning a technological high school diploma in STI2D with a focus on Energy and Environment. This allowed me to explore electricity, engineering, mechanics, and programming. During our projects, I consistently chose to work on autonomous robot programming rather than their physical design. I loved problem-solving, prototyping, and testing. That’s why I decided to pursue a degree in software development. I’m currently in my second year of a Bachelor of Science in IT, specializing in application development, and I’m truly passionate about what I do."
+      }
+    ]
   }
 }

@@ -5,6 +5,7 @@
 	import Projects from '$lib/components/Projects.svelte';
 	import Skills from '$lib/components/Skills.svelte';
 	import Contact from '$lib/components/Contact.svelte';
+	import Passions from '$lib/components/Passions.svelte';
 	import { base } from '$app/paths';
 	import Experiences from '$lib/components/Experiences.svelte';
 	import { locale } from '$lib/i18n';
@@ -78,6 +79,10 @@
 
 	<section id="experiences" class="experiences min-h-screen justify-center items-center flex">
 		<Experiences />
+	</section>
+
+	<section id="passions" class="passions min-h-screen justify-center items-center flex">
+		<Passions />
 	</section>
 
 	<section id="contact" class="Contact min-h-screen justify-center items-center flex">

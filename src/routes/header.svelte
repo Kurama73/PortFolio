@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     import { _ } from '$lib/i18n';
     import { locale } from '$lib/i18n';
+    import { get } from 'svelte/store';
 
     let isLangMenuOpen = false;
     let isScrolled = false;
@@ -9,14 +10,25 @@
     let isOpen = false;
     let activeSection = 'accueil'; // Section par défaut
 
-    function toggleLangMenu() {
-        isLangMenuOpen = !isLangMenuOpen;
-    }
+    onMount(() => {
+        const browserLang = navigator.language || navigator.languages[0];
+        const defaultLang = browserLang.startsWith('fr') ? 'en' : 'fr';
+        locale.set(defaultLang);
 
-    function changeLanguage(lang) {
-        locale.set(lang);
-        isLangMenuOpen = false;
-        console.log(lang);
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', checkMobile);
+        checkMobile();
+        updateActiveSection();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', checkMobile);
+        };
+    });
+
+    function toggleLanguage() {
+        const current = get(locale);
+        locale.set(current === 'fr' ? 'en' : 'fr');
     }
 
     function toggleMenu() {
@@ -61,18 +73,6 @@
         isMobile = window.innerWidth <= 768;
         isOpen = !isMobile;
     }
-
-    onMount(() => {
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', checkMobile);
-        checkMobile();
-        updateActiveSection();
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', checkMobile);
-        };
-    });
 </script>
 
 <style>
@@ -108,6 +108,28 @@
         height: 2px;
         background-color: #FF4D00;
         transition: width 0.3s;
+    }
+
+    .flag-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s;
+        opacity: 0.5;
+    }
+
+    .flag-icon:hover {
+        opacity: 1;
+    }
+
+    .flag-icon img {
+        border-radius: 50%;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     }
 </style>
 
@@ -148,14 +170,12 @@
         {#if !isMobile}
             <!-- Desktop : menu langue -->
             <div class="relative inline-block text-left ml-4">
-                <button on:click={toggleLangMenu}
-                        class="text-white bg-[#FF4D00] hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-xl px-1 py-1 text-center inline-flex items-center"
-                        type="button">
-                    🌐 {$locale === 'fr' ? 'Français' : 'English'}
-                    <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
+                <button on:click={() => toggleLanguage()} class="flag-icon">
+                    <img src={$locale === 'fr' ? '/icones/english.png' : '/icones/francais.png'}
+                         alt={$locale === 'fr' ? '🇬🇧' : '🇫🇷'}
+                         class="w-8 h-8 rounded-full" />
                 </button>
+
 
                 {#if isLangMenuOpen}
                     <div class="z-10 bg-gray-800 divide-y divide-gray-100 rounded-lg shadow w-30 dark:bg-gray-700 absolute mt-2">
@@ -194,6 +214,9 @@
                 <a href="#experiences" on:click={scrollToSection} class="nav-item {activeSection === 'experiences' ? 'active' : ''}">
                     {$_('experiences_title')}
                 </a>
+                <a href="#passions" on:click={scrollToSection} class="nav-item {activeSection === 'passions' ? 'active' : ''}">
+                    {$_('passions.title')}
+                </a>
                 <a href="#contact" on:click={scrollToSection} class="nav-item {activeSection === 'contact' ? 'active' : ''}">
                     {$_('contact_title')}
                 </a>
@@ -218,6 +241,9 @@
                     </a>
                     <a href="#experiences" on:click={scrollToSection} class="nav-item {activeSection === 'experiences' ? 'active' : ''}">
                         {$_('experiences_title')}
+                    </a>
+                    <a href="#passions" on:click={scrollToSection} class="nav-item {activeSection === 'passions' ? 'active' : ''}">
+                        {$_('passions.title')}
                     </a>
                     <a href="#contact" on:click={scrollToSection} class="nav-item {activeSection === 'contact' ? 'active' : ''}">
                         {$_('contact_title')}
