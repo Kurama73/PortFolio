@@ -132,7 +132,7 @@
         background: #ea580c;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
         .grille {
             grid-template-rows: repeat(3, minmax(0, 150px));
             grid-auto-columns: minmax(170px, 1fr);
