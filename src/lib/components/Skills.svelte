@@ -59,7 +59,7 @@
 				bind:this={scrollContainer}
 				on:scroll={() => scrollPosition = scrollContainer.scrollLeft}
 			>
-				<div class="grid gap-6 grid-flow-col grid-rows-[repeat(3,minmax(0,200px))] auto-cols-[minmax(200px,1fr)]">
+				<div class="grille grid gap-6 grid-flow-col grid-rows-[repeat(3,minmax(0,200px))] auto-cols-[minmax(200px,1fr)]">
 					{#each technologies.filter(tech => selectedButton === 'All' || tech.category === selectedButton) as tech}
 						<div class="skill-card bg-gray-800 p-6 rounded-lg w-full h-full flex flex-col justify-center snap-start">
 							<h3 class="text-2xl mb-3 text-center">{tech.name}</h3>
@@ -133,6 +133,11 @@
     }
 
     @media (max-width: 768px) {
+        .grille {
+            grid-template-rows: repeat(3, minmax(0, 150px));
+            grid-auto-columns: minmax(170px, 1fr);
+				}
+
         #filters {
             display: none !important;
         }
@@ -141,35 +146,32 @@
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             grid-template-rows: repeat(3, auto);
-						gap: 2px;
         }
 
         .skill-card {
-            height: auto;
-            min-height: 150px;
-            padding: 12px;
+            height: 150px;
+            width: 170px;
+            padding: 8px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             background-color: #1a202c;
             border-radius: 8px;
-						margin:0;
+            align-items: center;
         }
 
         .skill-image {
-            width: 70px;
-            height: 70px;
-            margin-bottom: 4px; /* Réduction de l'espacement sous l'image */
-
+            width: 50px;
+            height: 50px;
         }
 
         .progress-bar-container {
             height: 8px;
+            width: 80%;
             border: 1px solid #4a5568;
             background-color: #2d3748;
             border-radius: 4px;
             overflow: hidden;
-            margin-top: auto;
         }
 
         .progress-bar {
@@ -186,4 +188,5 @@
             margin-bottom: 0;
         }
     }
+
 </style>
