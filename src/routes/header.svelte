@@ -251,13 +251,13 @@
 
                     <!-- Sélecteur langue version mobile-->
                     <div class="flex justify-center gap-4 mt-1">
-                        <button on:click={() => changeLanguage('fr')}
+                        <button on:click={toggleLanguage}
                                 class="w-10 h-10 rounded-full bg-white text-lg flex items-center justify-center hover:scale-105 transition-transform">
-                            <image src="/icones/francais.png" alt="🇫🇷" class="w-8 h-8 rounded-full"/>
+                            <img src="/icones/francais.png" alt="🇫🇷" class="w-8 h-8 rounded-full" />
                         </button>
-                        <button on:click={() => changeLanguage('en')}
+                        <button on:click={toggleLanguage}
                                 class="w-10 h-10 rounded-full bg-white text-lg flex items-center justify-center hover:scale-105 transition-transform">
-                            <image src="/icones/english.png" alt="🇬🇧" class="w-8 h-8 rounded-full"/>
+                            <img src="/icones/english.png" alt="🇬🇧" class="w-8 h-8 rounded-full" />
                         </button>
                     </div>
 
