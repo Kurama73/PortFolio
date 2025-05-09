@@ -6,40 +6,34 @@
 	import Skills from '$lib/components/Skills.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Passions from '$lib/components/Passions.svelte';
-	import { base } from '$app/paths';
 	import Experiences from '$lib/components/Experiences.svelte';
 	import { locale } from '$lib/i18n';
+	import { base } from '$app/paths';
+	import Starback from 'starback';
 
 	$: if (!$locale) {
-		locale.set('fr'); // Définir la langue par défaut
+		locale.set('fr');
 	}
 
 	let showScrollTop = false;
 	let isExpanded = true;
-	let homeOpacity = 1;
-	let projectsOpacity = 0;
-	let transitionStartPoint = 500;
+	let canvas;
+
 
 	onMount(() => {
+		canvas = document.getElementById('canvas');
+		const starback = new Starback(canvas, {
+			type: 'dot',
+			quantity: 20,
+			direction: 0,
+			backgroundColor: ['#0e1118', '#232b3e'],
+			randomOpacity: true,
+			starSize: [0, 0.5]
+		});
+
 		const handleScroll = () => {
 			showScrollTop = window.scrollY > 15;
 			isExpanded = window.scrollY < 15;
-
-			// Calculer l'opacité en fonction de la position de défilement
-			const scrollPosition = window.scrollY;
-			const windowHeight = window.innerHeight;
-			const homeSectionHeight = document.getElementById('accueil').offsetHeight;
-
-			if (scrollPosition > transitionStartPoint && scrollPosition < homeSectionHeight - windowHeight + transitionStartPoint) {
-				homeOpacity = 1 - ((scrollPosition - transitionStartPoint) / (homeSectionHeight - windowHeight));
-				projectsOpacity = 1 - homeOpacity;
-			} else if (scrollPosition >= homeSectionHeight - windowHeight + transitionStartPoint) {
-				homeOpacity = 0;
-				projectsOpacity = 1;
-			} else {
-				homeOpacity = 1;
-				projectsOpacity = 0;
-			}
 		};
 
 		window.addEventListener('scroll', handleScroll);
@@ -50,20 +44,11 @@
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	};
 </script>
-
+<canvas id="canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
 
 <Header />
 
-<main class="home relative text-white font-['Jersey25']">
-	<div class="background-container">
-		<div class="background-home" style="opacity: {homeOpacity};">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png" alt="">
-			<div class="stars"></div>
-			<div class="twinkling"></div>
-			<div class="clouds"></div>
-		</div>
-		<div class="background-projects" style="opacity: {projectsOpacity};"></div>
-	</div>
+<main class="home relative text-white font-['Jersey25'] z-10">
 
 	<section id="accueil" class="min-h-screen pt-5 justify-center items-center flex">
 		<Home />
@@ -111,9 +96,9 @@
 			 download
 			 aria-label="Download my resume"
 			 class="flex items-center justify-center transition-all duration-500 ease-in-out {isExpanded ? 'w-auto px-8' : 'w-14'} h-14 bg-[#FF4D00] rounded-full hover:brightness-110 hover:drop-shadow-[0_0_8px_#FF4D00]">
-            <span class="flex items-center gap-2 overflow-hidden transition-all text-3xl duration-500 {isExpanded ? 'opacity-100 w-auto' : 'opacity-0 w-0'}">
-                Get my resume
-            </span>
+			<span class="flex items-center gap-2 overflow-hidden transition-all text-3xl duration-500 {isExpanded ? 'opacity-100 w-auto' : 'opacity-0 w-0'}">
+				Get my resume
+			</span>
 			<svg class="w-6 h-6 {isExpanded ? 'ml-2' : ''} transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
 			</svg>
@@ -122,143 +107,21 @@
 </div>
 
 <style>
-    .background-container {
-        position: fixed;
-        top: -20px;
-        left: -20px;
-        bottom: -20px;
-        right: -20px;
-        overflow: hidden;
-        background-color: black;
-        filter: blur(10px);
-        transform: scale(1.1);
+    :global(main, html, body) {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        height: 100%;
+        background-color: transparent;
     }
 
-    .background-home,
-    .background-projects {
+    canvas {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-size: cover;
-        background-position: center;
-        transition: opacity 0.5s ease-in-out;
+        z-index: -1; /* Ensure canvas is behind other components */
     }
 
-    .background-home {
-        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png');
-        z-index: 1;
-    }
-
-    .background-projects {
-        background-image: url('/backgrounds/bg-2.jpg');
-        z-index: 0;
-    }
-
-    .stars, .twinkling, .clouds {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .stars {
-        background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: block;
-        z-index: 0;
-    }
-
-    .twinkling {
-        background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
-        background-size: 1000px 1000px;
-        animation: move-background 70s linear infinite;
-        z-index: 3;
-    }
-
-    .clouds {
-        background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
-        background-size: 1000px 1000px;
-        animation: move-background 150s linear infinite;
-        z-index: 4;
-    }
-
-    .twinkling, .clouds {
-        width: 200%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        animation: move-background 70s linear infinite;
-    }
-
-    .twinkling {
-        background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
-        background-size: 1000px 1000px;
-        z-index: 2;
-    }
-
-    .clouds {
-        background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
-        background-size: 1000px 1000px;
-        z-index: 3;
-        animation-duration: 150s;
-    }
-
-    img {
-        height: 70vh;
-        width: 70vh;
-        position: absolute;
-        z-index: 3;
-        right: 20px;
-    }
-
-    @keyframes move-background {
-        from {
-            transform: translate3d(0, 0, 0);
-        }
-        to {
-            transform: translate3d(-1000px, 0, 0);
-        }
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .animate-fadeIn {
-        animation: fadeIn 0.3s ease-out forwards;
-    }
-
-    :global(main) {
-        position: relative;
-        z-index: 0;
-        min-height: 100vh;
-    }
-
-    @media (max-width: 768px) {
-        #floating {
-            display: none;
-        }
-        .background-container {
-            position: fixed;
-            top: -50px;
-            left: -50px;
-            bottom: -50px;
-            right: -50px;
-            overflow: hidden;
-            background-color: black;
-            filter: blur(10px);
-            transform: scale(1.2);
-            z-index: -1;
-        }
-    }
 </style>

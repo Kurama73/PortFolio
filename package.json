@@ -51,6 +51,7 @@
 	},
 	"dependencies": {
 		"@sveltejs/adapter-vercel": "^5.7.0",
+		"starback": "^2.1.6",
 		"svelte-i18n": "^4.0.1",
 		"three": "^0.176.0",
 		"vanta": "^0.5.24"
