@@ -53,7 +53,7 @@
                 <div class="cv-button-mobile mt-6 animate-fade-in delay-300">
                     <a href="/resume.pdf" target="_blank"
                        class="inline-block bg-[#FF4D00] hover:bg-[#e64300] text-white font-bold py-3 px-6 rounded-xl text-lg shadow-lg transition-transform transform hover:scale-105">
-                        Télécharger mon CV
+                        {$_(('cv'))}
                     </a>
                 </div>
             {/if}
