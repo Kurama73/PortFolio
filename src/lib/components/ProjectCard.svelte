@@ -7,13 +7,18 @@
 	export let title;
 	export let description;
 	export let tags;
-	export let imageSrc;
+	export let imageSrc = [];
 	export let isExpanded = false;
 	export let details;
 	export let competences = [];
 
 	const dispatch = createEventDispatcher();
 	let showModal = false;
+	let currentImageIndex = 0;
+
+	setInterval(() => {
+		currentImageIndex = (currentImageIndex + 1) % imageSrc.length;
+	}, 3000);
 
 	function handleToggleExpand() {
 		dispatch('toggleExpand');
@@ -45,8 +50,8 @@
 	</div>
 
 	<!-- Section Image -->
-	<div class="image-container w-full md:w-2/5 flex items-center justify-center">
-		<img src="{base}{imageSrc}" alt={title} class="project-image max-w-full max-h-full object-contain rounded-lg" />
+	<div class="image-container w-full md:w-2/5 flex items-center justify-center relative">
+		<img src="{base}{imageSrc[currentImageIndex]}" alt={title} class="project-image max-w-full max-h-full object-contain rounded-lg" />
 	</div>
 
 	<!-- Expand/Collapse Icon -->
@@ -157,6 +162,7 @@
         max-width: 90%;
         max-height: 200px;
         object-fit: contain;
+        transition: opacity 0.5s ease-in-out;
     }
 
     @media (min-width: 768px) {

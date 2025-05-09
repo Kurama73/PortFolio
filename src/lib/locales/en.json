@@ -21,7 +21,7 @@
       "description": "Project completed during an internship at Desautel: improvement and development of new features for fire panel configuration software. WPF interface design, data handling, implementation of the Observer pattern, migration to .NET 9, unit testing, and documentation.",
       "tags": ["C#", ".NET9", "WPF", "Design Patterns", "Git", "Company"],
       "details": "As part of Desautel’s R&D team, I contributed to the evolution of a critical business application: redesigning WPF interfaces, adding parameter management modules, improving code robustness using the Observer pattern, technical migration to .NET 9, writing unit tests and technical documentation. Collaboration with QA and support teams.",
-
+      "images" : ["/projects/AppliParam.png"],
       "competences": [
         {
           "code": "C1.3",
@@ -45,7 +45,7 @@
       "description": "SmartDesk is a modern web application developed with Svelte, dedicated to personal organization and productivity management. It offers an interactive calendar, task manager, note-taking module, and music widget integration, all within a responsive and intuitive interface.",
       "tags": ["HTML", "CSS", "JavaScript", "Svelte", "Node.js", "TailwindCSS", "GitHub", "Git", "MySQL", "VPS"],
       "details": "Design and development of a complete web application (Svelte/Node.js) following a full software lifecycle (analysis, testing, deployment). Aligned with AC11.01 (implementation), AC11.02 (design), and AC11.03 (testing).",
-
+      "images" : ["/projects/SmartDesk.png"],
       "competences": [
         {
           "code": "C4.2",
@@ -64,7 +64,7 @@
       "description": "Web application built with PHP and Symfony enabling collaborative shopping list management: account creation, basket management, real-time sharing and purchase tracking.",
       "tags": ["PHP", "Symfony", "Twig", "HTML", "CSS", "MySQL", "GitHub"],
       "details": "Design and development of a complete website: authentication, user management, list creation and sharing, role management, responsive interface, data persistence in MySQL. Individual project with documentation and GitHub versioning.",
-
+      "images" : ["/projects/PanierVIP.png"],
       "competences": [
         {
           "code": "C1.1",
@@ -88,7 +88,7 @@
       "description": "Android mobile app developed in Kotlin to simulate opening cosmetic crates, retrieving data via an API, and storing/authenticating with Firebase.",
       "tags": ["Kotlin", "Android Studio", "Firebase", "REST API", "UI/UX"],
       "details": "Development of a mobile app: interface design with Android Studio, asynchronous data retrieval from an API, user management and cloud storage via Firebase, implementation of notifications and connection state management.",
-
+      "images" : ["/projects/LootBoxHunter.png"],
       "competences": [
         {
           "code": "C1.3",
@@ -112,7 +112,7 @@
       "description": "Development of an interactive game on Raspberry Pi 3 using the LED matrix and sensors of the SenseHat: the player controls a light dot through a maze using the gyroscope.",
       "tags": ["Python", "Raspberry Pi", "SenseHat", "Game", "Gyroscope", "LED Matrix"],
       "details": "Design of a Python game leveraging SenseHat features: LED matrix display, gyroscope-based movement, collision and level management, optimization for embedded hardware.",
-
+      "images" : ["/projects/DimensionalMatrix.png"],
       "competences": [
         {
           "code": "C1.4",
@@ -131,7 +131,7 @@
       "description": "Java Swing application for creating, coloring, and visualizing graphs modeling airspace and avoiding aircraft collisions in France.",
       "tags": ["Java", "Swing", "Graph", "Algorithms", "Graphical Interface", "GitHub"],
       "details": "Development of a Java application: graph modeling, collision avoidance algorithms, interactive GUI, event and color management, documentation, and project management on GitHub.",
-
+      "images" : ["/projects/SAE_JAVA.png"],
       "competences": [
         {
           "code": "C2.2",

@@ -21,7 +21,7 @@
       "description": "Projet réalisé lors d’un stage chez Desautel : amélioration et développement de nouvelles fonctionnalités sur un logiciel de paramétrage de centrales incendie. Conception d’interfaces WPF, gestion des données, mise en place du patron Observer, migration vers .NET 9, tests unitaires et documentation.",
       "tags": ["C#", ".NET9", "WPF", "Design Patterns", "Git", "Entreprise"],
       "details": "Au sein de l’équipe R&D de Desautel, j’ai participé à l’évolution d’un logiciel métier critique : refonte d’interfaces en WPF, ajout de modules de gestion des paramètres, amélioration de la robustesse du code (Observer), migration technique vers .NET 9, rédaction de tests unitaires et documentation technique. Collaboration avec les équipes QA et support.",
-
+      "images" : ["/projects/AppliParam.png"],
       "competences": [
         {
           "code": "C1.3",
@@ -45,7 +45,7 @@
       "description": "SmartDesk est une application web moderne développée avec Svelte, dédiée à l'organisation personnelle et à la gestion de la productivité. Elle propose un calendrier interactif, un gestionnaire de tâches, un module de prise de notes et l'intégration de widgets musicaux, le tout dans une interface responsive et intuitive.",
       "tags": ["HTML", "CSS", "JavaScript", "Svelte", "Node.js", "TailwindCSS", "GitHub", "Git", "MySQL", "VPS"],
       "details": "Conception et développement d'une application web complète (Svelte/Node.js) répondant à un cahier des charges, avec gestion du cycle de vie (analyse, tests, déploiement). Alignement avec AC11.01 (implémentation), AC11.02 (conception) et AC11.03 (tests).",
-
+      "images" : ["/projects/SmartDesk.png"],
       "competences": [
         {
           "code": "C4.2",
@@ -64,7 +64,7 @@
       "description": "Application web réalisée avec PHP et Symfony permettant la gestion collaborative de listes de courses : création de comptes, gestion de paniers, partage et suivi des achats en temps réel.",
       "tags": ["PHP", "Symfony", "Twig", "HTML", "CSS", "MySQL", "GitHub"],
       "details": "Conception et développement d’un site web complet : authentification, gestion des utilisateurs, création et partage de listes, gestion des rôles, interface responsive, persistance des données en MySQL. Projet individuel avec documentation et versionnage sur GitHub.",
-
+      "images" : ["/projects/PanierVIP.png"],
       "competences": [
         {
           "code": "C1.1",
@@ -88,7 +88,7 @@
       "description": "Application mobile Android développée en Kotlin permettant de simuler l’ouverture de caisses de cosmétiques, récupération des données via une API, stockage et authentification avec Firebase.",
       "tags": ["Kotlin", "Android Studio", "Firebase", "API REST", "UI/UX"],
       "details": "Réalisation d’une application mobile : conception de l’interface sous Android Studio, récupération asynchrone des données d’une API, gestion des utilisateurs et stockage cloud via Firebase, mise en place de notifications et gestion des états de connexion.",
-
+      "images" : ["/projects/LootBoxHunter.png"],
       "competences": [
         {
           "code": "C1.3",
@@ -112,7 +112,7 @@
       "description": "Développement d’un jeu interactif sur Raspberry Pi 3 utilisant la matrice de LEDs et les capteurs du SenseHat : le joueur contrôle un point lumineux dans un labyrinthe grâce au gyroscope.",
       "tags": ["Python", "Raspberry Pi", "SenseHat", "Jeu", "Gyroscope", "LED Matrix"],
       "details": "Conception d’un jeu en Python exploitant les fonctionnalités du SenseHat : affichage sur matrice de LEDs, utilisation du gyroscope pour déplacer le joueur, gestion des collisions et des niveaux, optimisation pour le hardware embarqué.",
-
+      "images" : ["/projects/DimensionalMatrix.png"],
       "competences": [
         {
           "code": "C1.4",
@@ -131,7 +131,7 @@
       "description": "Application Java Swing de création, coloration et visualisation de graphes modélisant l’espace aérien et l’évitement de collision d’avions en France.",
       "tags": ["Java", "Swing", "Graphe", "Algorithmes", "Interface graphique", "GitHub"],
       "details": "Développement d’une application Java : modélisation de graphes, algorithmes d’évitement de collision, interface graphique interactive, gestion des événements et des couleurs, documentation et gestion de projet sur GitHub.",
-
+      "images" : ["/projects/SAE_JAVA.png"],
       "competences": [
         {
           "code": "C2.2",

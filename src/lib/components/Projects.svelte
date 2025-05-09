@@ -6,15 +6,6 @@
     let expandedProject: string | null = null;
     let showAllProjects = false;
 
-    const image = [
-        "/projects/AppliParam.png",
-        "/projects/SmartDesk.png",
-        "/projects/PanierVIP.png",
-        "/projects/LootBoxHunter.png",
-        "/projects/DimensionalMatrix.png",
-        "/projects/SAE_JAVA.png",
-    ];
-
     function toggleExpand(projectTitle: string) {
         expandedProject = expandedProject === projectTitle ? null : projectTitle;
     }
@@ -34,7 +25,7 @@
                   title={proj.title}
                   description={proj.description}
                   tags={proj.tags}
-                  imageSrc={image[i]}
+                  imageSrc={proj.images}
                   isExpanded={expandedProject === proj.title}
                   on:toggleExpand={() => toggleExpand(proj.title)}
                   details={proj.details}

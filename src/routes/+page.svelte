@@ -9,7 +9,6 @@
 	import Experiences from '$lib/components/Experiences.svelte';
 	import { locale } from '$lib/i18n';
 	import { base } from '$app/paths';
-	import Starback from 'starback';
 
 	$: if (!$locale) {
 		locale.set('fr');
@@ -17,22 +16,11 @@
 
 	let showScrollTop = false;
 	let isExpanded = true;
-	let canvas;
 	let isMobile = false;
 
 	onMount(() => {
-		canvas = document.getElementById('canvas');
-		const starback = new Starback(canvas, {
-			type: 'dot',
-			quantity: 20,
-			direction: 0,
-			backgroundColor: ['#0e1118', '#232b3e'],
-			randomOpacity: true,
-			starSize: [0, 0.5]
-		});
-
 		const updateMobile = () => {
-			isMobile = window.innerWidth <= 768; // seuil typique pour mobile
+			isMobile = window.innerWidth <= 768;
 		};
 
 		const handleScroll = () => {
@@ -50,17 +38,14 @@
 		};
 	});
 
-
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	};
 </script>
-<canvas id="canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
 
 <Header />
 
 <main class="home relative text-white font-['Jersey25'] z-10">
-
 	<section id="accueil" class="min-h-screen pt-5 justify-center items-center flex">
 		<Home />
 	</section>
@@ -87,10 +72,9 @@
 </main>
 
 {#if !isMobile}
-	<!-- Floating buttons container -->
 	<div id="floating" class="fixed bottom-8 right-8 flex flex-col gap-4 z-50 pointer-events-auto">
 		{#if showScrollTop}
-			<div class="order-{!isExpanded ? '1' : '2'}">
+			<div class="order-2">
 				<button
 					on:click={scrollToTop}
 					aria-label="Scroll to top"
@@ -103,14 +87,14 @@
 			</div>
 		{/if}
 
-		<div class="relative group order-{!isExpanded ? '2' : '1'}">
+		<div class="relative group" class:order-1={isExpanded}>
 			<a href="{base}/resume.pdf"
 				 download
 				 aria-label="Download my resume"
 				 class="flex items-center justify-center transition-all duration-500 ease-in-out {isExpanded ? 'w-auto px-8' : 'w-14'} h-14 bg-[#FF4D00] rounded-full hover:brightness-110 hover:drop-shadow-[0_0_8px_#FF4D00]">
-				<span class="flex items-center gap-2 overflow-hidden transition-all text-3xl duration-500 {isExpanded ? 'opacity-100 w-auto' : 'opacity-0 w-0'}">
-					Get my resume
-				</span>
+					<span class="flex items-center gap-2 overflow-hidden transition-all text-3xl duration-500 {isExpanded ? 'opacity-100 w-auto' : 'opacity-0 w-0'}">
+						Get my resume
+					</span>
 				<svg class="w-6 h-6 {isExpanded ? 'ml-2' : ''} transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
 				</svg>
@@ -120,21 +104,22 @@
 {/if}
 
 <style>
-    :global(main, html, body) {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        height: 100%;
-        background-color: transparent;
+    #floating button, #floating a {
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
 
-    canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1; /* Ensure canvas is behind other components */
+    .animate-fadeIn {
+        animation: fadeIn 0.3s ease-out forwards;
     }
 
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>
